@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
 const respondJSON = (req, res, statusCode, jsonObject) => {
@@ -20,19 +21,19 @@ const getTimezoneNames = (req, res) => {
       const tzCutData = [
         tzFullData[x].gmtOffsetName,
         tzFullData[x].abbreviation,
-        tzFullData[x].tzName
+        tzFullData[x].tzName,
       ];
       timezoneArray.push(tzCutData);
-    };
-  };
+    }
+  }
   const responseJSON = {
-    timezoneArray
+    timezoneArray,
   };
   respondJSON(req, res, 200, responseJSON);
 };
 const getTimezonesInCountry = (req, res) => {
   if (!req.query.GTIC_name) {
-    return respondJSON(req, res, 404, { message: "404" })
+    return respondJSON(req, res, 404, { message: '404' });
   }
   const responseJSON = {
   };

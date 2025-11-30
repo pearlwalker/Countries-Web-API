@@ -93,14 +93,14 @@ const onRequest = (req, res) => {
 
   if (urlStruct[parsedUrl.pathname]) {
     const handler = urlStruct[parsedUrl.pathname];
-    if(req.method === 'POST' || req.method === 'post') {
+    if (req.method === 'POST' || req.method === 'post') {
       parseBody(req, res, handler);
     } else {
       handler(req, res);
-    };
+    }
   } else {
     urlStruct.notFound(req, res);
-  };
+  }
 };
 
 http.createServer(onRequest).listen(port, () => {
