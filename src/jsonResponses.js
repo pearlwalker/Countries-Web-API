@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
 const respondJSON = (req, res, status, object) => {
@@ -9,7 +10,7 @@ const respondJSON = (req, res, status, object) => {
     'Content-Length': Buffer.byteLength(content, 'utf8'),
   });
   if (req.method !== 'HEAD' && status !== 204) {
-      res.write(content);
+    res.write(content);
   }
   res.end();
 };
