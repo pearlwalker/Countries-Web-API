@@ -28,13 +28,8 @@ const parseBody = (req, res, handler) => {
   req.on('end', () => {
     const bodyString = Buffer.concat(body).toString();
     req.body = query.parse(bodyString);
-
     handler(req, res);
   });
-};
-
-const handlePost = (req, res, parsedUrl) => {
-
 };
 
 const onRequest = (req, res) => {
