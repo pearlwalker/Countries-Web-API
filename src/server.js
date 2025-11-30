@@ -37,47 +37,6 @@ const handlePost = (req, res, parsedUrl) => {
 
 };
 
-const handleGet = (req, res, parsedUrl) => {
-  switch (parsedUrl.pathname) {
-    case '/':
-      htmlHandler.getIndex(req, res);
-      break;
-    case '/styles.css':
-      htmlHandler.getCSS(req, res);
-      break;
-    case '/bundle.js':
-      htmlHandler.getBundle(req, res);
-      break;
-    case '/client.js':
-      htmlHandler.getClient(req, res);
-      break;
-    case '/countries.json':
-      htmlHandler.getCountries(req, res);
-      break;
-    case '/success':
-      jsonHandler.success(req, res);
-      break;
-    case '/badreq':
-      jsonHandler.badreq(req, res);
-      break;
-    case '/api/getTimezoneNames':
-      jsonHandler.getTimezoneNames(req, res);
-      break;
-    case '/api/getTimezonesInCountry':
-      jsonHandler.getTimezonesInCountry(req, res);
-      break;
-    case '/api/getCountriesWithTimezone':
-      jsonHandler.getCountriesWithTimezone(req, res);
-      break;
-    case '/api/getTimezonesFromTime':
-      jsonHandler.getTimezonesFromTime(req, res);
-      break;
-    default:
-      jsonHandler.notFound(req, res);
-      break;
-  }
-};
-
 const onRequest = (req, res) => {
   const protocol = req.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(req.url, `${protocol}://${req.headers.host}`);
