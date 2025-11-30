@@ -1,0 +1,1 @@
+const sun = require('./celestial-sun');
