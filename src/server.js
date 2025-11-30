@@ -13,7 +13,7 @@ const urlStruct = {
 };
 
 const parseBody = (req, res, handler) => {
-  const requestBody = [];
+  const body = [];
 
   req.on('error', (err) => {
     console.dir(err);
@@ -22,11 +22,11 @@ const parseBody = (req, res, handler) => {
   });
 
   req.on('data', (chunk) => {
-    requestBody.push(chunk);
+    body.push(chunk);
   });
 
   req.on('end', () => {
-    const bodyToString = Buffer.concat(requestBody).toString();
+    const bodyToString = Buffer.concat(body).toString();
     req.body = query.parse(bodyToString);
 
     handler(req, res);
