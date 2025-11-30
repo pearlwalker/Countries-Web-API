@@ -27,7 +27,7 @@
                 </h2>
             </button>
             <form action="/api/getFromEveryCountry" method="get" class="requestForm" id="getEvery">
-                <!--Description Goes Here-->
+                <p>Returns selected attributes from every country in countries.json, sorted in specific manner</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
@@ -43,7 +43,7 @@
                 </h2>
             </button>
             <form action="/api/getCountryData" method="get" class="requestForm" id="getCountry">
-                <!--Description Goes Here-->
+                <p>Returns data from one specific country</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
@@ -59,7 +59,7 @@
                 </h2>
             </button>
             <form action="/api/getTimezonesWithOffset" method="get" class="requestForm" id="getTimezones">
-                <!--Description Goes Here-->
+                <p>Returns any timezone with specified UTC offset</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
@@ -75,7 +75,7 @@
                 </h2>
             </button>
             <form action="/api/getDayArc" method="get" class="requestForm" id="getSun">
-                <!--Description Goes Here-->
+                <p>Returns sunrise and sunset times for a specific country's timezone on a given day</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
@@ -90,7 +90,8 @@
                 </h2>
             </button>
             <form action="/api/renameTimezone" method="post" class="requestForm" id="renameTZ">
-                <!--Description Goes Here-->
+                <p>Use country name to select a timezone within it, enter a new name and/or abbreviation, then update
+                    the existing data for that country.</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
@@ -105,7 +106,9 @@
                 </h2>
             </button>
             <form action="/api/createTimezone" method="post" class="requestForm" id="createTZ">
-                <!--Description Goes Here-->
+                <p>Use a country name to create a new timezone within it, select a valid GMT/UTC offset (validity is
+                    determined by UTC offset of timezones already existing in said country), name it, then submit to
+                    update that country's data.</p>
                 <!--Form input Goes Here-->
                 <input type="submit" value="Search">
             </form>
