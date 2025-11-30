@@ -15,23 +15,23 @@ const serveFile = (response, file, contentType) => {
   response.end();
 };
 
-const getIndex = (request, response) => {
+const getIndex = (req, response) => {
   serveFile(response, index, 'text/html');
 };
 
-const getCSS = (request, response) => {
+const getCSS = (req, response) => {
   serveFile(response, css, 'text/css');
 };
 
-const getBundle = (request, response) => {
+const getBundle = (req, response) => {
   serveFile(response, bundle, 'application/javascript');
 };
 
-const getClient = (request, response) => {
+const getClient = (req, response) => {
   serveFile(response, client, 'application/javascript');
 };
 
-const getCountries = (request, response) => {
+const getCountries = (req, response) => {
   serveFile(response, countries, 'application/json');
 };
 

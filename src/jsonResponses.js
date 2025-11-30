@@ -1,7 +1,7 @@
 const fs = require('fs');
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
-const respondJSON = (request, response, statusCode, jsonObject) => {
+const respondJSON = (req, response, statusCode, jsonObject) => {
   const jsonString = JSON.stringify(jsonObject);
 
   response.writeHead(statusCode, {
@@ -12,7 +12,7 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
   response.end();
 };
 
-const getTimezoneNames = (request, response) => {
+const getTimezoneNames = (req, response) => {
   const timezoneArray = [];
   for (let i = 0; i < countries.length; i++) {
     const tzFullData = countries[i].timezones;
@@ -28,69 +28,69 @@ const getTimezoneNames = (request, response) => {
   const responseJSON = {
     timezoneArray
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
-const getTimezonesInCountry = (request, response) => {
-  if (!request.query.GTIC_name) {
-    return respondJSON(request, response, 404, { message: "404" })
+const getTimezonesInCountry = (req, response) => {
+  if (!req.query.GTIC_name) {
+    return respondJSON(req, response, 404, { message: "404" })
   }
   const responseJSON = {
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const getCountriesWithTimezone = (request, response) => {
+const getCountriesWithTimezone = (req, response) => {
   const responseJSON = {
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const getTimezonesFromTime = (request, response) => {
+const getTimezonesFromTime = (req, response) => {
   const responseJSON = {
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const newTimezone = (request, response) => {
+const newTimezone = (req, response) => {
   const responseJSON = {
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const changeGmtOffset = (request, response) => {
+const changeGmtOffset = (req, response) => {
   const responseJSON = {
   };
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const success = (request, response) => {
+const success = (req, response) => {
   const responseJSON = {
     message: 'This is a successful response!',
   };
 
-  respondJSON(request, response, 200, responseJSON);
+  respondJSON(req, response, 200, responseJSON);
 };
 
-const badRequest = (request, response) => {
+const badRequest = (req, response) => {
   const responseJSON = {
     message: 'This request has the required parameters',
   };
 
-  if (!request.query.valid || request.query.valid !== 'true') {
+  if (!req.query.valid || req.query.valid !== 'true') {
     responseJSON.message = 'Missing valid query parameter set to true';
     responseJSON.id = 'badRequest';
-    return respondJSON(request, response, 400, responseJSON);
+    return respondJSON(req, response, 400, responseJSON);
   }
 
-  return respondJSON(request, response, 200, responseJSON);
+  return respondJSON(req, response, 200, responseJSON);
 };
 
-const notFound = (request, response) => {
+const notFound = (req, response) => {
   const responseJSON = {
     message: 'The page you are looking for was not found.',
     id: 'notFound',
   };
-  respondJSON(request, response, 404, responseJSON);
+  respondJSON(req, response, 404, responseJSON);
 };
 
 module.exports = {

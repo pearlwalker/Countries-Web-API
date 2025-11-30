@@ -12,90 +12,90 @@ const urlStruct = {
   notFound: jsonHandler.notFound,
 };
 
-const parseBody = (request, response, handler) => {
+const parseBody = (req, response, handler) => {
   const requestBody = [];
 
-  request.on('error', (err) => {
+  req.on('error', (err) => {
     console.dir(err);
     response.statusCode = 400;
     response.end();
   });
 
-  request.on('data', (chunk) => {
+  req.on('data', (chunk) => {
     requestBody.push(chunk);
   });
 
-  request.on('end', () => {
+  req.on('end', () => {
     const bodyToString = Buffer.concat(requestBody).toString();
-    request.body = query.parse(bodyToString);
+    req.body = query.parse(bodyToString);
 
-    handler(request, response);
+    handler(req, response);
   });
 };
 
-const handlePost = (request, response, parsedUrl) => {
+const handlePost = (req, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
     case '/api/newTimezone':
-      parseBody(request, response, jsonHandler.newTimezone);
+      parseBody(req, response, jsonHandler.newTimezone);
       break;
     case '/api/changeGmtOffset':
-      parseBody(request, response, jsonHandler.changeGmtOffset);
+      parseBody(req, response, jsonHandler.changeGmtOffset);
       break;
     default:
       break;
   }
 };
 
-const handleGet = (request, response, parsedUrl) => {
+const handleGet = (req, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
     case '/':
-      htmlHandler.getIndex(request, response);
+      htmlHandler.getIndex(req, response);
       break;
     case '/styles.css':
-      htmlHandler.getCSS(request, response);
+      htmlHandler.getCSS(req, response);
       break;
     case '/bundle.js':
-      htmlHandler.getBundle(request, response);
+      htmlHandler.getBundle(req, response);
       break;
     case '/client.js':
-      htmlHandler.getClient(request, response);
+      htmlHandler.getClient(req, response);
       break;
     case '/countries.json':
-      htmlHandler.getCountries(request, response);
+      htmlHandler.getCountries(req, response);
       break;
     case '/success':
-      jsonHandler.success(request, response);
+      jsonHandler.success(req, response);
       break;
-    case '/badRequest':
-      jsonHandler.badRequest(request, response);
+    case '/badreq':
+      jsonHandler.badreq(req, response);
       break;
     case '/api/getTimezoneNames':
-      jsonHandler.getTimezoneNames(request, response);
+      jsonHandler.getTimezoneNames(req, response);
       break;
     case '/api/getTimezonesInCountry':
-      jsonHandler.getTimezonesInCountry(request, response);
+      jsonHandler.getTimezonesInCountry(req, response);
       break;
     case '/api/getCountriesWithTimezone':
-      jsonHandler.getCountriesWithTimezone(request, response);
+      jsonHandler.getCountriesWithTimezone(req, response);
       break;
     case '/api/getTimezonesFromTime':
-      jsonHandler.getTimezonesFromTime(request, response);
+      jsonHandler.getTimezonesFromTime(req, response);
       break;
     default:
-      jsonHandler.notFound(request, response);
+      jsonHandler.notFound(req, response);
       break;
   }
 };
 
-const onRequest = (request, response) => {
-  const protocol = request.connection.encrypted ? 'https' : 'http';
-  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+const onRequest = (req, response) => {
+  const protocol = req.connection.encrypted ? 'https' : 'http';
+  const parsedUrl = new URL(req.url, `${protocol}://${req.headers.host}`);
 
   if (urlStruct[parsedUrl.pathname]) {
     const handler = urlStruct[parsedUrl.pathname];
     
   } else {
-    urlStruct.notFound(request, response);
+    urlStruct.notFound(req, response);
   };
 };
 
