@@ -91,16 +91,6 @@ const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
 
-  switch (request.method) {
-    case 'POST':
-      handlePost(request, response, parsedUrl);
-      break;
-    case 'GET':
-      handleGet(request, response, parsedUrl);
-      break;
-    default:
-      handleGet(request, response, parsedUrl);
-  }
 };
 
 http.createServer(onRequest).listen(port, () => {
