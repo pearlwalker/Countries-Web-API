@@ -6,33 +6,33 @@ const bundle = fs.readFileSync(`${__dirname}/../hosted/bundle.js`);
 const client = fs.readFileSync(`${__dirname}/../client/client.js`);
 const countries = fs.readFileSync(`${__dirname}/../data/countries.json`);
 
-const serveFile = (response, file, contentType) => {
-  response.writeHead(200, {
+const serveFile = (res, file, contentType) => {
+  res.writeHead(200, {
     'Content-Type': contentType,
     'Content-Length': Buffer.byteLength(file, 'utf8'),
   });
-  response.write(file);
-  response.end();
+  res.write(file);
+  res.end();
 };
 
-const getIndex = (req, response) => {
-  serveFile(response, index, 'text/html');
+const getIndex = (req, res) => {
+  serveFile(res, index, 'text/html');
 };
 
-const getCSS = (req, response) => {
-  serveFile(response, css, 'text/css');
+const getCSS = (req, res) => {
+  serveFile(res, css, 'text/css');
 };
 
-const getBundle = (req, response) => {
-  serveFile(response, bundle, 'application/javascript');
+const getBundle = (req, res) => {
+  serveFile(res, bundle, 'application/javascript');
 };
 
-const getClient = (req, response) => {
-  serveFile(response, client, 'application/javascript');
+const getClient = (req, res) => {
+  serveFile(res, client, 'application/javascript');
 };
 
-const getCountries = (req, response) => {
-  serveFile(response, countries, 'application/json');
+const getCountries = (req, res) => {
+  serveFile(res, countries, 'application/json');
 };
 
 module.exports = {

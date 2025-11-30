@@ -12,13 +12,13 @@ const urlStruct = {
   notFound: jsonHandler.notFound,
 };
 
-const parseBody = (req, response, handler) => {
+const parseBody = (req, res, handler) => {
   const requestBody = [];
 
   req.on('error', (err) => {
     console.dir(err);
-    response.statusCode = 400;
-    response.end();
+    res.statusCode = 400;
+    res.end();
   });
 
   req.on('data', (chunk) => {
@@ -29,65 +29,65 @@ const parseBody = (req, response, handler) => {
     const bodyToString = Buffer.concat(requestBody).toString();
     req.body = query.parse(bodyToString);
 
-    handler(req, response);
+    handler(req, res);
   });
 };
 
-const handlePost = (req, response, parsedUrl) => {
+const handlePost = (req, res, parsedUrl) => {
   switch (parsedUrl.pathname) {
     case '/api/newTimezone':
-      parseBody(req, response, jsonHandler.newTimezone);
+      parseBody(req, res, jsonHandler.newTimezone);
       break;
     case '/api/changeGmtOffset':
-      parseBody(req, response, jsonHandler.changeGmtOffset);
+      parseBody(req, res, jsonHandler.changeGmtOffset);
       break;
     default:
       break;
   }
 };
 
-const handleGet = (req, response, parsedUrl) => {
+const handleGet = (req, res, parsedUrl) => {
   switch (parsedUrl.pathname) {
     case '/':
-      htmlHandler.getIndex(req, response);
+      htmlHandler.getIndex(req, res);
       break;
     case '/styles.css':
-      htmlHandler.getCSS(req, response);
+      htmlHandler.getCSS(req, res);
       break;
     case '/bundle.js':
-      htmlHandler.getBundle(req, response);
+      htmlHandler.getBundle(req, res);
       break;
     case '/client.js':
-      htmlHandler.getClient(req, response);
+      htmlHandler.getClient(req, res);
       break;
     case '/countries.json':
-      htmlHandler.getCountries(req, response);
+      htmlHandler.getCountries(req, res);
       break;
     case '/success':
-      jsonHandler.success(req, response);
+      jsonHandler.success(req, res);
       break;
     case '/badreq':
-      jsonHandler.badreq(req, response);
+      jsonHandler.badreq(req, res);
       break;
     case '/api/getTimezoneNames':
-      jsonHandler.getTimezoneNames(req, response);
+      jsonHandler.getTimezoneNames(req, res);
       break;
     case '/api/getTimezonesInCountry':
-      jsonHandler.getTimezonesInCountry(req, response);
+      jsonHandler.getTimezonesInCountry(req, res);
       break;
     case '/api/getCountriesWithTimezone':
-      jsonHandler.getCountriesWithTimezone(req, response);
+      jsonHandler.getCountriesWithTimezone(req, res);
       break;
     case '/api/getTimezonesFromTime':
-      jsonHandler.getTimezonesFromTime(req, response);
+      jsonHandler.getTimezonesFromTime(req, res);
       break;
     default:
-      jsonHandler.notFound(req, response);
+      jsonHandler.notFound(req, res);
       break;
   }
 };
 
-const onRequest = (req, response) => {
+const onRequest = (req, res) => {
   const protocol = req.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(req.url, `${protocol}://${req.headers.host}`);
 
@@ -95,7 +95,7 @@ const onRequest = (req, response) => {
     const handler = urlStruct[parsedUrl.pathname];
     
   } else {
-    urlStruct.notFound(req, response);
+    urlStruct.notFound(req, res);
   };
 };
 

@@ -1,4 +1,4 @@
-const handleResponse = async (response) => {
+const handleResponse = async (res) => {
 
 };
 
