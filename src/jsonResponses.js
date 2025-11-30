@@ -2,13 +2,13 @@ const fs = require('fs');
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
 const respondJSON = (req, res, status, jsonObject) => {
-  const jsonString = JSON.stringify(jsonObject);
+  const content = JSON.stringify(jsonObject);
 
   res.writeHead(status, {
     'Content-Type': 'application/json',
-    'Content-Length': Buffer.byteLength(jsonString, 'utf8'),
+    'Content-Length': Buffer.byteLength(content, 'utf8'),
   });
-  res.write(jsonString);
+  res.write(content);
   res.end();
 };
 
