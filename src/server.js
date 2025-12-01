@@ -14,6 +14,7 @@ const urlStruct = {
   '/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
   '/getDayArc': jsonHandler.getDayArc,
   '/renameTimezone': jsonHandler.renameTimezone,
+  '/createTimezone': jsonHandler.createTimezone,
   notFound: jsonHandler.notFound,
 };
 
