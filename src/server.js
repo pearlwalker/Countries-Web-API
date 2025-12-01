@@ -11,6 +11,7 @@ const urlStruct = {
   '/bundle.js': htmlHandler.getBundle,
   '/getFromEveryCountry': jsonHandler.getFromEveryCountry,
   '/getCountryData': jsonHandler.getCountryData,
+  '/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
   notFound: jsonHandler.notFound,
 };
 
