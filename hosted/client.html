@@ -29,6 +29,15 @@
             <form action="/api/getFromEveryCountry" method="get" class="requestForm" id="getEvery">
                 <p class="formDescription">Returns selected attributes from every country in countries.json, sorted in specific manner</p>
                 <!--Form input Goes Here-->
+                <fieldset>
+                    <input type="checkbox" name="showCapital" id="showCapital">
+                    <input type="checkbox" name="showFinance" id="showFinance">
+                    <input type="checkbox" name="showRegion" id="showRegion">
+                    <input type="checkbox" name="showSubregion" id="showSubregion">
+                    <input type="checkbox" name="showNationality" id="showNationality">
+                    <input type="checkbox" name="showTimezones" id="showTimezones">
+                    <input type="checkbox" name="showCoordinates" id="showCoordinates">
+                </fieldset>
                 <select class="methodSelect">
                     <option value="get">GET</option>
                     <option value="head">HEAD</option>
