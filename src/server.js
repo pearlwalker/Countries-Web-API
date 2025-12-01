@@ -9,6 +9,7 @@ const urlStruct = {
   '/': htmlHandler.getIndex,
   '/styles.css': htmlHandler.getCSS,
   '/bundle.js': htmlHandler.getBundle,
+  '/getFromEveryCountry': jsonHandler.getFromEveryCountry,
   notFound: jsonHandler.notFound,
 };
 
