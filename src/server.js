@@ -12,6 +12,7 @@ const urlStruct = {
   '/getFromEveryCountry': jsonHandler.getFromEveryCountry,
   '/getCountryData': jsonHandler.getCountryData,
   '/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
+  '/getDayArc': jsonHandler.getDayArc,
   notFound: jsonHandler.notFound,
 };
 
