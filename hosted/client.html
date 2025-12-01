@@ -49,6 +49,10 @@
             <form action="/api/getCountryData" method="get" class="requestForm" id="getCountry">
                 <p>Returns data from one specific country</p>
                 <!--Form input Goes Here-->
+                <select class="methodSelect">
+                    <option value="get">GET</option>
+                    <option value="head">HEAD</option>
+                </select>
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -65,6 +69,10 @@
             <form action="/api/getTimezonesWithOffset" method="get" class="requestForm" id="getTimezones">
                 <p>Returns any timezone with specified UTC offset</p>
                 <!--Form input Goes Here-->
+                <select class="methodSelect">
+                    <option value="get">GET</option>
+                    <option value="head">HEAD</option>
+                </select>
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -81,6 +89,10 @@
             <form action="/api/getDayArc" method="get" class="requestForm" id="getSun">
                 <p>Returns sunrise and sunset times for a specific country's timezone on a given day</p>
                 <!--Form input Goes Here-->
+                <select class="methodSelect">
+                    <option value="get">GET</option>
+                    <option value="head">HEAD</option>
+                </select>
                 <input type="submit" value="Search">
             </form>
         </div>
