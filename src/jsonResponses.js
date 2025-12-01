@@ -17,7 +17,7 @@ const respondJSON = (req, res, status, object) => {
 
 const getFromEveryCountry = (req, res) => {
   const responseJSON = {
-
+    countries,
   };
   respondJSON(req, res, 200, responseJSON);
 };
