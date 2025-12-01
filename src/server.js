@@ -10,6 +10,7 @@ const urlStruct = {
   '/styles.css': htmlHandler.getCSS,
   '/bundle.js': htmlHandler.getBundle,
   '/getFromEveryCountry': jsonHandler.getFromEveryCountry,
+  '/getCountryData': jsonHandler.getCountryData,
   notFound: jsonHandler.notFound,
 };
 
