@@ -15,6 +15,30 @@ const respondJSON = (req, res, status, object) => {
   res.end();
 };
 
+const getFromEveryCountry = (req, res) => {
+
+};
+
+const getCountryData = (req, res) => {
+
+};
+
+const getTimezonesWithOffset = (req, res) => {
+
+};
+
+const getDayArc = (req, res) => {
+
+};
+
+const renameTimezone = (req, res) => {
+
+};
+
+const createTimezone = (req, res) => {
+
+};
+
 const getTimezoneNames = (req, res) => {
   const timezoneArray = [];
   for (let i = 0; i < countries.length; i++) {
