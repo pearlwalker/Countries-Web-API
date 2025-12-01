@@ -7,10 +7,6 @@ const sendFetch = async (url) => {
 };
 
 const createCollapsibles = () => {
-
-};
-
-const init = () => {
     const collapsibles = document.querySelectorAll('.collapsible');
     const requestForm = document.querySelectorAll('.requestForm');
     collapsibles.forEach((button, index) => {
@@ -30,6 +26,9 @@ const init = () => {
             };
         });
     });
+};
+
+const init = () => {
 };
 
 window.onload = init;
