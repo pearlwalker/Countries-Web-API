@@ -13,6 +13,7 @@ const urlStruct = {
   '/getCountryData': jsonHandler.getCountryData,
   '/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
   '/getDayArc': jsonHandler.getDayArc,
+  '/renameTimezone': jsonHandler.renameTimezone,
   notFound: jsonHandler.notFound,
 };
 
