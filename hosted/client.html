@@ -65,6 +65,8 @@
             <form action="/api/getCountryData" method="get" class="requestForm" id="getCountry">
                 <p class="formDescription">Returns data from one specific country</p>
                 <!--Form input Goes Here-->
+                <label for="countryName">Country:</label>
+                <input type="text" name="countryName" class="countryName">
                 <select class="methodSelect">
                     <option value="get">GET</option>
                     <option value="head">HEAD</option>
