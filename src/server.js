@@ -9,12 +9,12 @@ const urlStruct = {
   '/': htmlHandler.getIndex,
   '/styles.css': htmlHandler.getCSS,
   '/bundle.js': htmlHandler.getBundle,
-  '/getFromEveryCountry': jsonHandler.getFromEveryCountry,
-  '/getCountryData': jsonHandler.getCountryData,
-  '/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
-  '/getDayArc': jsonHandler.getDayArc,
-  '/renameTimezone': jsonHandler.renameTimezone,
-  '/createTimezone': jsonHandler.createTimezone,
+  '/api/getFromEveryCountry': jsonHandler.getFromEveryCountry,
+  '/api/getCountryData': jsonHandler.getCountryData,
+  '/api/getTimezonesWithOffset': jsonHandler.getTimezonesWithOffset,
+  '/api/getDayArc': jsonHandler.getDayArc,
+  '/api/renameTimezone': jsonHandler.renameTimezone,
+  '/api/createTimezone': jsonHandler.createTimezone,
   notFound: jsonHandler.notFound,
 };
 
