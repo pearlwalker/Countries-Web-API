@@ -16,27 +16,45 @@ const respondJSON = (req, res, status, object) => {
 };
 
 const getFromEveryCountry = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const getCountryData = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const getTimezonesWithOffset = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const getDayArc = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const renameTimezone = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const createTimezone = (req, res) => {
+  const responseJSON = {
 
+  };
+  respondJSON(req, res, 200, responseJSON);
 };
 
 const success = (req, res) => {
