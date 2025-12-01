@@ -29,6 +29,7 @@ const createCollapsibles = () => {
 };
 
 const init = () => {
+    createCollapsibles;
 };
 
 window.onload = init;
