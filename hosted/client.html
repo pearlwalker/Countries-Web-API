@@ -87,6 +87,8 @@
             <form action="/api/getTimezonesWithOffset" method="get" class="requestForm" id="getTimezones">
                 <p class="formDescription">Returns any timezone with specified UTC offset</p>
                 <!--Form input Goes Here-->
+                <label for="offsetSlider">UTC Offset:</label>
+                <input type="range" name="offsetSlider" id="offsetSlider">
                 <select class="methodSelect">
                     <option value="get">GET</option>
                     <option value="head">HEAD</option>
