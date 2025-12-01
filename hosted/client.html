@@ -29,6 +29,10 @@
             <form action="/api/getFromEveryCountry" method="get" class="requestForm" id="getEvery">
                 <p>Returns selected attributes from every country in countries.json, sorted in specific manner</p>
                 <!--Form input Goes Here-->
+                <select class="methodSelect">
+                    <option value="get">GET</option>
+                    <option value="head">HEAD</option>
+                </select>
                 <input type="submit" value="Search">
             </form>
         </div>
