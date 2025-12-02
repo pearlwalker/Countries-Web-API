@@ -23,7 +23,9 @@ const handleResponse = async (res) => {
 };
 
 const sendFetch = async (form, method, url = undefined) => {
-
+    if(!url) {
+        url = form.getAttribute('actions');
+    };
 };
 
 const createCollapsibles = () => {
