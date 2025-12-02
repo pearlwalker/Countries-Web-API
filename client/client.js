@@ -23,7 +23,7 @@ const handleResponse = async (res) => {
 };
 
 const sendFetch = async (form, method, url = undefined) => {
-    if(!url) {
+    if (!url) {
         url = form.getAttribute('actions');
     };
     const options = {
@@ -31,6 +31,10 @@ const sendFetch = async (form, method, url = undefined) => {
         headers: {
             'Accept': 'application/json',
         },
+    };
+
+    if (method === 'POST' || method === 'post') {
+
     };
 };
 
