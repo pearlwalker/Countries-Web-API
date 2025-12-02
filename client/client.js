@@ -36,6 +36,12 @@ const sendFetch = async (form, method, url = undefined) => {
     if (method === 'POST' || method === 'post') {
 
     };
+
+    if (method === 'HEAD' || method === 'head') {
+
+    } else { 
+
+    };
 };
 
 const createCollapsibles = () => {
