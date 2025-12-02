@@ -26,6 +26,12 @@ const sendFetch = async (form, method, url = undefined) => {
     if(!url) {
         url = form.getAttribute('actions');
     };
+    const options = {
+        method: method,
+        headers: {
+            'Accept': 'application/json',
+        },
+    };
 };
 
 const createCollapsibles = () => {
