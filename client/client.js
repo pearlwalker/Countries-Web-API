@@ -1,5 +1,25 @@
 const handleResponse = async (res) => {
     const content = document.getElementById('content');
+    switch (res.status) {
+        case 200:
+            content.innerHTML = `<b>Success</b>`;
+            break;
+        case 201:
+            content.innerHTML = `<b>Created</b>`;
+            break;
+        case 204:
+            content.innerHTML = `<b>Updated</b>`;
+            break;
+        case 400:
+            content.innerHTML = `<b>Bad Request</b>`;
+            break;
+        case 404:
+            content.innerHTML = `<b>Not Found</b>`;
+            break;
+        default:
+            content.innerHTML = `<p>Status code not implemented by client</p>`;
+            break;
+    };
 };
 
 const sendFetch = async (url) => {
