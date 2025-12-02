@@ -22,7 +22,7 @@ const handleResponse = async (res) => {
     };
 };
 
-const sendFetch = async (url) => {
+const sendFetch = async (url = undefined) => {
 
 };
 
@@ -57,6 +57,7 @@ const init = () => {
     const getSunForm = document.querySelector('#getSun');
     const renameForm = document.querySelector('#renameTZ');
     const createForm = document.querySelector('#createTZ');
+    
 };
 
 window.onload = init;
