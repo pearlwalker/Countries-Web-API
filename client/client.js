@@ -1,5 +1,5 @@
 const handleResponse = async (res) => {
-
+    const content = document.getElementById('content');
 };
 
 const sendFetch = async (url) => {
