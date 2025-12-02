@@ -1,4 +1,4 @@
-const handleResponse = async (res) => {
+const handleResponse = async (res, hasBody) => {
     const content = document.getElementById('content');
     switch (res.status) {
         case 200:
