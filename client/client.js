@@ -50,6 +50,13 @@ const createCollapsibles = () => {
 
 const init = () => {
     createCollapsibles;
+
+    const getEveryForm = document.querySelector('#getEvery');
+    const getCountryForm = document.querySelector('#getCountry');
+    const getTimezonesForm = document.querySelector('#getTimezones');
+    const getSunForm = document.querySelector('#getSun');
+    const renameForm = document.querySelector('#renameTZ');
+    const createForm = document.querySelector('#createTZ');
 };
 
 window.onload = init;
