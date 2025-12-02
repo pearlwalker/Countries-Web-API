@@ -14,8 +14,9 @@ body {
 
 #content {
     padding: 1rem;
-    height: 400px;
+    height: 25rem;
     overflow-y: scroll;
+    background-color: lightskyblue;
 }
 
 #bottom {
