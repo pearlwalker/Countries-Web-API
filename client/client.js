@@ -68,7 +68,7 @@ const createCollapsibles = () => {
 };
 
 const init = () => {
-    createCollapsibles;
+    createCollapsibles();
 
     const getEveryForm = document.querySelector('#getEvery');
     const getCountryForm = document.querySelector('#getCountry');
