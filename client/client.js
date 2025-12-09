@@ -21,7 +21,28 @@ const handleResponse = async (res, hasBody) => {
             break;
     };
 };
+const submitGetEvery = async (form, method) => {
 
+};
+
+const submitGetCountry = async (form, method) => {
+};
+
+const submitGetTimezones = async (form, method) => {
+
+};
+
+const submitGetSun = async (form, method) => {
+
+};
+
+const submitRenameTZ = async (form, method) => {
+
+};
+
+const submitCreateTZ = async (form, method) => {
+
+};
 const sendFetch = async (form, method, url = undefined) => {
     let hasBody = true;
     if (!url) {
