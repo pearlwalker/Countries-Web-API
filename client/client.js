@@ -29,7 +29,7 @@ const submitGetEvery = async (form, method, options, url) => {
         hasBody = false;
     }
     const fetchResponse = await fetch(url, options);
-
+    handleResponse(fetchResponse, hasBody);
 };
 
 const submitGetCountry = async (form, method, options, url) => {
