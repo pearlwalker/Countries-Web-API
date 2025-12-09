@@ -128,7 +128,7 @@ const createForm = document.querySelector('#createTZ');
 
     formData.forEach((item) => {
         const submitCallback = (e) => {
-            const selectElement = item.form.querySelector('.methodSelect').value ?? null;
+            const selectElement = item.form.querySelector('.methodSelect')?.value ?? null;
             const attributeMethod = item.form.getAttribute('method') ?? null;
             const method = selectElement ?? attributeMethod ?? "ERROR";
             e.preventDefault();
