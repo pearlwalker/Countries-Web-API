@@ -34,9 +34,11 @@ const handleResponse = async (res, hasBody) => {
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
+    let checklistData = [];
+    let resText = "";
     const attrChecklist = document.getElementById('attrChecklist');
     const boxes = attrChecklist.getElementsByTagName('input');
-    let checklistData = [];
+
     for (let box of boxes) {
         console.log(box.checked);
         checklistData.push(
@@ -58,7 +60,7 @@ const submitGetEvery = async (form, method, options, url) => {
         if (resObj) {
 
         } else {
-            
+
         }
     };
 };
