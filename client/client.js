@@ -25,7 +25,7 @@ const handleResponse = async (res, hasBody) => {
     if (hasBody && res.status !== 204) {
         const resObj = await res.json();
         console.log(resObj);
-        if (resObj.body) {
+        if (resObj) {
             content.innerHTML += `<p>${resObj.body}</p>`;
         } else {
             content.innerHTML += `<p>Generic error message :3</p>`
