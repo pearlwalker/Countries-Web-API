@@ -55,6 +55,11 @@ const submitGetEvery = async (form, method, options, url) => {
     if (hasBody) {
         const resObj = await response.json();
         console.log(resObj);
+        if (resObj) {
+
+        } else {
+            
+        }
     };
 };
 
