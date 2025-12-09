@@ -46,15 +46,39 @@ const submitGetEvery = async (form, method, options, url) => {
 };
 
 const submitGetCountry = async (form, method, options, url) => {
-    console.log(form, method);
+    let hasBody = true;
+    if (method === 'HEAD' || method === 'head') {
+        hasBody = false;
+    }
+    const response = await fetch(url, options);
+    if (hasBody) {
+        const resObj = await response.json();
+        console.log(resObj);
+    };
 };
 
 const submitGetTimezones = async (form, method, options, url) => {
-    console.log(form, method);
+    let hasBody = true;
+    if (method === 'HEAD' || method === 'head') {
+        hasBody = false;
+    }
+    const response = await fetch(url, options);
+    if (hasBody) {
+        const resObj = await response.json();
+        console.log(resObj);
+    };
 };
 
 const submitGetSun = async (form, method, options, url) => {
-    console.log(form, method);
+    let hasBody = true;
+    if (method === 'HEAD' || method === 'head') {
+        hasBody = false;
+    }
+    const response = await fetch(url, options);
+    if (hasBody) {
+        const resObj = await response.json();
+        console.log(resObj);
+    };
 };
 
 const submitRenameTZ = async (form, method, options, url) => {
