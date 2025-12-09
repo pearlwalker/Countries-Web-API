@@ -58,11 +58,11 @@ const submitGetEvery = async (form, method, options, url) => {
         const resObj = await response.json();
         console.log(resObj);
         if (resObj) {
-
         } else {
-
-        }
+            resText = `<p>Generic Error message! :3</p>`
+        };
     };
+    console.log(resText);
 };
 
 const submitGetCountry = async (form, method, options, url) => {
