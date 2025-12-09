@@ -127,8 +127,9 @@ const init = () => {
 
     formData.forEach((item) => {
         const callback = (e) => {
+            const method = item.form.querySelector('.methodSelect').value || item.form.getAttribute('action') || undefined;
             e.preventDefault();
-            item.handler(item.form);
+            item.handler(item.form, method);
             return false;
         };
         item.form.addEventListener('submit', callback);
