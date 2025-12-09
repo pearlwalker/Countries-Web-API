@@ -34,6 +34,8 @@ const handleResponse = async (res, hasBody) => {
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
+    const attrChecklist = document.getElementById('attrChecklist');
+    
     let hasBody = true;
     if (method === 'HEAD' || method === 'head') {
         hasBody = false;
