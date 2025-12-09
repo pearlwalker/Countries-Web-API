@@ -46,28 +46,6 @@ const submitRenameTZ = async (form, method, options) => {
 const submitCreateTZ = async (form, method, options) => {
     console.log(form, method);
 };
-const sendFetch = async (form, method, url = undefined) => {
-    let hasBody = true;
-    if (!url) {
-        url = form.getAttribute('actions');
-    };
-    const options = {
-        method: method,
-        headers: {
-            'Accept': 'application/json',
-        },
-    };
-
-    if (method === 'POST' || method === 'post') {
-
-    };
-
-    if (method === 'HEAD' || method === 'head') {
-
-    } else {
-
-    };
-};
 
 const createCollapsibles = () => {
     const collapsibles = document.querySelectorAll('.collapsible');
