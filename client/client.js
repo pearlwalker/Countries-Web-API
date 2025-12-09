@@ -128,15 +128,15 @@ const init = () => {
 
     formData.forEach((item) => {
         const submitCallback = (e) => {
-            const method = item.form.querySelector('.methodSelect')?.value ?? item.form.getAttribute('method') ?? null;
+            const formMethod = item.form.querySelector('.methodSelect')?.value ?? item.form.getAttribute('method') ?? null;
             const options = {
-                method: method,
+                method: formMethod,
                 headers: {
                     'Accept': 'application/json',
                 },
             };
             e.preventDefault();
-            item.handler(item.form, method, options);
+            item.handler(item.form, formMethod, options);
             return false;
         };
         item.form.addEventListener('submit', submitCallback);
