@@ -1,9 +1,4 @@
-const getEveryForm = document.querySelector('#getEvery');
-const getCountryForm = document.querySelector('#getCountry');
-const getTimezonesForm = document.querySelector('#getTimezones');
-const getSunForm = document.querySelector('#getSun');
-const renameForm = document.querySelector('#renameTZ');
-const createForm = document.querySelector('#createTZ');
+
 
 const handleResponse = async (res, hasBody) => {
     const content = document.getElementById('content');
@@ -98,7 +93,12 @@ const createCollapsibles = () => {
 
 const init = () => {
     createCollapsibles();
-
+const getEveryForm = document.querySelector('#getEvery');
+const getCountryForm = document.querySelector('#getCountry');
+const getTimezonesForm = document.querySelector('#getTimezones');
+const getSunForm = document.querySelector('#getSun');
+const renameForm = document.querySelector('#renameTZ');
+const createForm = document.querySelector('#createTZ');
     const formData = [
         {
             form: getEveryForm,
@@ -127,13 +127,13 @@ const init = () => {
     ];
 
     formData.forEach((item) => {
-        const callback = (e) => {
+        const submitCallback = (e) => {
             const method = item.form.querySelector('.methodSelect').value || item.form.getAttribute('action') || undefined;
             e.preventDefault();
             item.handler(item.form, method);
             return false;
         };
-        item.form.addEventListener('submit', callback);
+        item.form.addEventListener('submit', submitCallback);
     });
 };
 
