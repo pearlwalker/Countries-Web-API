@@ -98,7 +98,32 @@ const createCollapsibles = () => {
 const init = () => {
     createCollapsibles();
 
-
+        const formData = [
+        {
+            form: getEveryForm,
+            handler: submitGetEvery,
+        },
+        {
+            form: getCountryForm,
+            handler: submitGetCountry,
+        },
+        {
+            form: getTimezonesForm,
+            handler: submitGetTimezones,
+        },
+        {
+            form: getSunForm,
+            handler: submitGetSun,
+        },
+        {
+            form: renameForm,
+            handler: submitRenameTZ,
+        },
+        {
+            form: createForm,
+            handler: submitCreateTZ,
+        },
+    ];
 };
 
 window.onload = init;
