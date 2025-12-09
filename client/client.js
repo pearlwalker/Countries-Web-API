@@ -37,7 +37,7 @@ const submitGetEvery = async (form, method, options, url) => {
     const attrChecklist = document.getElementById('attrChecklist');
     const boxes = attrChecklist.getElementsByTagName('input');
     for (let box of boxes) {
-        console.log(box.value);
+        console.log(box.checked);
     };
     let hasBody = true;
     if (method === 'HEAD' || method === 'head') {
