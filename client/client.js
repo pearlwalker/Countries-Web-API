@@ -45,15 +45,13 @@ const submitGetEvery = async (form, method, options, url) => {
     let hasBody = true;
     if (method === 'HEAD' || method === 'head') {
         hasBody = false;
-    }
+    };
     const response = await fetch(url, options);
-    if (hasBody) {
-        const resObj = await response.json();
-        console.log(resObj);
-        if (resObj) {
-        } else {
-            resText = `<p>Generic Error message! :3</p>`
-        };
+    const resObj = await response.json();
+    if (resObj) {
+    console.log(resObj);
+    } else {
+        resText = `<p>Generic Error message! :3</p>`
     };
     console.log(resText);
 };
