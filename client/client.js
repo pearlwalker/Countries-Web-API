@@ -93,12 +93,12 @@ const createCollapsibles = () => {
 
 const init = () => {
     createCollapsibles();
-const getEveryForm = document.querySelector('#getEvery');
-const getCountryForm = document.querySelector('#getCountry');
-const getTimezonesForm = document.querySelector('#getTimezones');
-const getSunForm = document.querySelector('#getSun');
-const renameForm = document.querySelector('#renameTZ');
-const createForm = document.querySelector('#createTZ');
+    const getEveryForm = document.querySelector('#getEvery');
+    const getCountryForm = document.querySelector('#getCountry');
+    const getTimezonesForm = document.querySelector('#getTimezones');
+    const getSunForm = document.querySelector('#getSun');
+    const renameForm = document.querySelector('#renameTZ');
+    const createForm = document.querySelector('#createTZ');
     const formData = [
         {
             form: getEveryForm,
@@ -128,9 +128,7 @@ const createForm = document.querySelector('#createTZ');
 
     formData.forEach((item) => {
         const submitCallback = (e) => {
-            const selectElement = item.form.querySelector('.methodSelect')?.value ?? null;
-            const attributeMethod = item.form.getAttribute('method') ?? null;
-            const method = selectElement ?? attributeMethod ?? "ERROR";
+            const method = item.form.querySelector('.methodSelect')?.value ?? item.form.getAttribute('method') ?? null;
             e.preventDefault();
             item.handler(item.form, method);
             return false;
