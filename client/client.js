@@ -28,7 +28,7 @@ const handleResponse = async (res, hasBody, resText) => {
 };
 const submitGetEvery = async (form, method, options, url) => {
     const response = await fetch(url, options);
-    
+
     let checklistData = [];
     let resText = "";
     let hasBody = false;
@@ -49,10 +49,10 @@ const submitGetEvery = async (form, method, options, url) => {
     };
 
     const resObj = await response.json();
-    if (resObj) {
-        
-    } else {
-        resText = `<p>Generic Error message! :3</p>`
+
+    if (!resObj) {
+        resText = `<p>Generic Error message! :3</p>`;
+        return handleResponse(response, hasBody, resText);
     };
 };
 
