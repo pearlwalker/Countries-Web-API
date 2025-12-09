@@ -113,8 +113,9 @@ const init = () => {
                     'Accept': 'application/json',
                 },
             };
+            const url = item.form.getAttribute('action');
             e.preventDefault();
-            item.handler(item.form, formMethod, options);
+            item.handler(item.form, formMethod, options, url);
             return false;
         };
         item.form.addEventListener('submit', submitCallback);
