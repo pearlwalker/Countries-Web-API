@@ -29,9 +29,9 @@ const handleResponse = async (res, hasBody, resText) => {
 const submitGetEvery = async (form, method, options, url) => {
     let checklistData = [];
     let resText = "";
+    let hasBody = false;
     const attrChecklist = document.getElementById('attrChecklist');
     const boxes = attrChecklist.getElementsByTagName('input');
-
     for (let box of boxes) {
         console.log(box.checked);
         checklistData.push(
@@ -41,19 +41,16 @@ const submitGetEvery = async (form, method, options, url) => {
             }
         );
     };
-    console.log(checklistData);
-    let hasBody = true;
-    if (method === 'HEAD' || method === 'head') {
-        hasBody = false;
-    };
     const response = await fetch(url, options);
+    if (method === 'HEAD' || method === 'head') {
+
+    };
     const resObj = await response.json();
     if (resObj) {
-    console.log(resObj);
+        console.log(resObj);
     } else {
         resText = `<p>Generic Error message! :3</p>`
     };
-    console.log(resText);
 };
 
 const submitGetCountry = async (form, method, options, url) => {
