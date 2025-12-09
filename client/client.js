@@ -38,8 +38,8 @@ const submitGetEvery = async (form, method, options, url) => {
     if (method === 'HEAD' || method === 'head') {
         hasBody = false;
     }
-    const fetchResponse = await fetch(url, options);
-    handleResponse(fetchResponse, hasBody);
+    const response = await fetch(url, options);
+    handleResponse(response, hasBody);
 };
 
 const submitGetCountry = async (form, method, options, url) => {
