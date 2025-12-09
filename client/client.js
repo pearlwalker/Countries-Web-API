@@ -24,8 +24,12 @@ const handleResponse = async (res, hasBody) => {
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
+    let hasBody = true;
+    if(method === 'HEAD' || method === 'head') {
+        hasBody = false;
+    }
     const fetchResponse = await fetch(url, options);
-    
+
 };
 
 const submitGetCountry = async (form, method, options, url) => {
