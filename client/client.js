@@ -27,9 +27,12 @@ const handleResponse = async (res, hasBody, resText) => {
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
+    const response = await fetch(url, options);
+    
     let checklistData = [];
     let resText = "";
     let hasBody = false;
+
     const attrChecklist = document.getElementById('attrChecklist');
     const boxes = attrChecklist.getElementsByTagName('input');
     for (let box of boxes) {
@@ -40,7 +43,7 @@ const submitGetEvery = async (form, method, options, url) => {
             }
         );
     };
-    const response = await fetch(url, options);
+
     if (method === 'HEAD' || method === 'head') {
         return handleResponse(response, hasBody, resText);
     };
