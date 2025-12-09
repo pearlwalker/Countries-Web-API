@@ -47,7 +47,7 @@ const submitGetEvery = async (form, method, options, url) => {
     if (method === 'HEAD' || method === 'head') {
         return handleResponse(response, hasBody, resText);
     };
-
+    hasBody = true;
     const resObj = await response.json();
 
     if (!resObj) {
@@ -65,6 +65,7 @@ const submitGetEvery = async (form, method, options, url) => {
         })
         resText += `</ul>`;
     };
+    return handleResponse(response, hasBody, resText);
 };
 
 const submitGetCountry = async (form, method, options, url) => {
