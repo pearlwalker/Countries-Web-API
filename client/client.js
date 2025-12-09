@@ -41,10 +41,12 @@ const submitGetEvery = async (form, method, options, url) => {
         console.log(box.checked);
         checklistData.push(
             {
-                
+                attr: box.name,
+                showAttr: box.checked,
             }
         );
     };
+    console.log(checklistData);
     let hasBody = true;
     if (method === 'HEAD' || method === 'head') {
         hasBody = false;
