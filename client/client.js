@@ -26,7 +26,8 @@ const handleResponse = async (res, hasBody) => {
         const resObj = await res.json();
         console.log(resObj);
         if (resObj) {
-            content.innerHTML += `<p>${resObj.body}</p>`;
+            const resText = JSON.stringify(resObj.countries);
+            content.innerHTML += `<p>${resText}</p>`;
         } else {
             content.innerHTML += `<p>Generic error message :3</p>`
         }
