@@ -54,6 +54,14 @@ const submitGetEvery = async (form, method, options, url) => {
         resText = `<p>Generic Error message! :3</p>`;
         return handleResponse(response, hasBody, resText);
     };
+
+    for (const country in resObj) {
+        checklistData.forEach((item) => {
+            if (item.showAttr === true) {
+
+            }
+        })
+    };
 };
 
 const submitGetCountry = async (form, method, options, url) => {
