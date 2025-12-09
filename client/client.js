@@ -126,7 +126,12 @@ const init = () => {
     ];
 
     formData.forEach((item) => {
-        item.form.addEventListener('submit', item.handler);
+        const callback = (e) => {
+            e.preventDefault();
+            item.handler(item.form);
+            return false;
+        };
+        item.form.addEventListener('submit', callback);
     });
 };
 
