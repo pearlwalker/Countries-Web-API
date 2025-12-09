@@ -24,7 +24,8 @@ const handleResponse = async (res, hasBody) => {
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
-    console.log(form, method);
+    const fetchResponse = await fetch(url, options);
+    
 };
 
 const submitGetCountry = async (form, method, options, url) => {
