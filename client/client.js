@@ -33,7 +33,6 @@ const submitGetEvery = async (form, method, options, url) => {
     const attrChecklist = document.getElementById('attrChecklist');
     const boxes = attrChecklist.getElementsByTagName('input');
     for (let box of boxes) {
-        console.log(box.checked);
         checklistData.push(
             {
                 attr: box.name,
