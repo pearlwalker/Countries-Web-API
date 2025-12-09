@@ -23,27 +23,27 @@ const handleResponse = async (res, hasBody) => {
             break;
     };
 };
-const submitGetEvery = async (form, method) => {
+const submitGetEvery = async (form, method, options) => {
     console.log(form, method);
 };
 
-const submitGetCountry = async (form, method) => {
+const submitGetCountry = async (form, method, options) => {
     console.log(form, method);
 };
 
-const submitGetTimezones = async (form, method) => {
+const submitGetTimezones = async (form, method, options) => {
     console.log(form, method);
 };
 
-const submitGetSun = async (form, method) => {
+const submitGetSun = async (form, method, options) => {
     console.log(form, method);
 };
 
-const submitRenameTZ = async (form, method) => {
+const submitRenameTZ = async (form, method, options) => {
     console.log(form, method);
 };
 
-const submitCreateTZ = async (form, method) => {
+const submitCreateTZ = async (form, method, options) => {
     console.log(form, method);
 };
 const sendFetch = async (form, method, url = undefined) => {
