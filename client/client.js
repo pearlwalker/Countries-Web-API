@@ -43,7 +43,7 @@ const submitGetEvery = async (form, method, options, url) => {
     };
     const response = await fetch(url, options);
     if (method === 'HEAD' || method === 'head') {
-
+        return handleResponse(response, hasBody, resText);
     };
     const resObj = await response.json();
     if (resObj) {
