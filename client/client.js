@@ -56,11 +56,14 @@ const submitGetEvery = async (form, method, options, url) => {
     };
 
     for (const country in resObj) {
+        resText += `<h3>${country.name}</h3>`;
+        resText += `<ul>`
         checklistData.forEach((item) => {
             if (item.showAttr === true) {
-
+                
             }
         })
+        resText += `</ul>`;
     };
 };
 
