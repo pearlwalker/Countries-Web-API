@@ -98,7 +98,7 @@ const createCollapsibles = () => {
 const init = () => {
     createCollapsibles();
 
-        const formData = [
+    const formData = [
         {
             form: getEveryForm,
             handler: submitGetEvery,
@@ -124,6 +124,10 @@ const init = () => {
             handler: submitCreateTZ,
         },
     ];
+
+    formData.forEach((item) => {
+        item.form.addEventListener('submit', item.handler);
+    });
 };
 
 window.onload = init;
