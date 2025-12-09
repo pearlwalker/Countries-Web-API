@@ -39,7 +39,11 @@ const submitGetEvery = async (form, method, options, url) => {
         hasBody = false;
     }
     const response = await fetch(url, options);
-    handleResponse(response, hasBody);
+    // handleResponse(response, hasBody);
+    if (hasBody) {
+        const resObj = await response.json();
+        console.log(resObj);
+    };
 };
 
 const submitGetCountry = async (form, method, options, url) => {
