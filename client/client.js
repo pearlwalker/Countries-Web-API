@@ -23,14 +23,7 @@ const handleResponse = async (res, hasBody, resText) => {
             break;
     };
     if (hasBody && res.status !== 204) {
-        const resObj = await res.json();
-        console.log(resObj);
-        if (resObj) {
-            const resText = JSON.stringify(resObj.countries);
-            content.innerHTML += `<p>${resText}</p>`;
-        } else {
-            content.innerHTML += `<p>Generic error message :3</p>`
-        }
+        content.innerHTML += resText;
     };
 };
 const submitGetEvery = async (form, method, options, url) => {
