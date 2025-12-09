@@ -1,3 +1,10 @@
+const getEveryForm = document.querySelector('#getEvery');
+const getCountryForm = document.querySelector('#getCountry');
+const getTimezonesForm = document.querySelector('#getTimezones');
+const getSunForm = document.querySelector('#getSun');
+const renameForm = document.querySelector('#renameTZ');
+const createForm = document.querySelector('#createTZ');
+
 const handleResponse = async (res, hasBody) => {
     const content = document.getElementById('content');
     switch (res.status) {
@@ -61,7 +68,7 @@ const sendFetch = async (form, method, url = undefined) => {
 
     if (method === 'HEAD' || method === 'head') {
 
-    } else { 
+    } else {
 
     };
 };
@@ -91,12 +98,6 @@ const createCollapsibles = () => {
 const init = () => {
     createCollapsibles();
 
-    const getEveryForm = document.querySelector('#getEvery');
-    const getCountryForm = document.querySelector('#getCountry');
-    const getTimezonesForm = document.querySelector('#getTimezones');
-    const getSunForm = document.querySelector('#getSun');
-    const renameForm = document.querySelector('#renameTZ');
-    const createForm = document.querySelector('#createTZ');
 
 };
 
