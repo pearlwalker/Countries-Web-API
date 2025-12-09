@@ -47,9 +47,10 @@ const submitGetEvery = async (form, method, options, url) => {
     if (method === 'HEAD' || method === 'head') {
         return handleResponse(response, hasBody, resText);
     };
+
     const resObj = await response.json();
     if (resObj) {
-        console.log(resObj);
+        
     } else {
         resText = `<p>Generic Error message! :3</p>`
     };
