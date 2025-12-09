@@ -1,6 +1,6 @@
 
 
-const handleResponse = async (res, hasBody) => {
+const handleResponse = async (res, hasBody, resText) => {
     const content = document.getElementById('content');
     switch (res.status) {
         case 200:
