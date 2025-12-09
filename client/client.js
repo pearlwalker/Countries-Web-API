@@ -29,26 +29,27 @@ const handleResponse = async (res, hasBody) => {
     };
 };
 const submitGetEvery = async (form, method) => {
-
+    console.log(form, method);
 };
 
 const submitGetCountry = async (form, method) => {
+    console.log(form, method);
 };
 
 const submitGetTimezones = async (form, method) => {
-
+    console.log(form, method);
 };
 
 const submitGetSun = async (form, method) => {
-
+    console.log(form, method);
 };
 
 const submitRenameTZ = async (form, method) => {
-
+    console.log(form, method);
 };
 
 const submitCreateTZ = async (form, method) => {
-
+    console.log(form, method);
 };
 const sendFetch = async (form, method, url = undefined) => {
     let hasBody = true;
