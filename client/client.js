@@ -22,10 +22,19 @@ const handleResponse = async (res, hasBody) => {
             content.innerHTML = `<p>Status code not implemented by client</p>`;
             break;
     };
+    if (hasBody && res.status !== 204) {
+        const resObj = await res.json();
+        console.log(resObj);
+        if (resObj.body) {
+            content.innerHTML += `<p>${resObj.body}</p>`;
+        } else {
+            content.innerHTML += `<p>Generic error message :3</p>`
+        }
+    };
 };
 const submitGetEvery = async (form, method, options, url) => {
     let hasBody = true;
-    if(method === 'HEAD' || method === 'head') {
+    if (method === 'HEAD' || method === 'head') {
         hasBody = false;
     }
     const fetchResponse = await fetch(url, options);
