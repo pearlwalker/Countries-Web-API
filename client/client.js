@@ -74,7 +74,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `<ul class="js_nestedList js_ul">`;
                         for (let zone of country.timezones) {
                             resText += `<li>`;
-                            resText += `${zone.tzName}/${zone.abbreviation} (${tz.gmtOffsetName})`;
+                            resText += `${zone.tzName}/${zone.abbreviation} (${zone.gmtOffsetName})`;
                             resText += `</li>`;
                         };
                         resText += `</ul>`;
