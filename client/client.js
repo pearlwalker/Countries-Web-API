@@ -72,6 +72,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (item.attr === "timezones"):
                         resText += `
+                            <div class="js_wrapper countries">
                             <h4 class="js_h4">Timezones</h4>
                             <ul class="js_nestedList js_ul">
                         `;
@@ -80,7 +81,10 @@ const submitGetEvery = async (form, method, options, url) => {
                             resText += `${zone.tzName}/${zone.abbreviation} (${zone.gmtOffsetName})`;
                             resText += `</li>`;
                         };
-                        resText += `</ul>`;
+                        resText += `
+                            </ul>
+                            </div>
+                        `;
                         break;
                     case (item.attr === "coordinates"):
                         resText += `<li class="js_li">${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0</li>`;
