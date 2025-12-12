@@ -61,7 +61,6 @@ const submitGetEvery = async (form, method, options, url) => {
         checklistData
             .filter((item) => item.showAttr === true)
             .forEach((item) => {
-                if (item.showAttr === true) {
                     if (item.showAttr === true && (country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
                         console.log(country[item.attr]);
                         resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
@@ -76,8 +75,6 @@ const submitGetEvery = async (form, method, options, url) => {
                         console.log(country[item.attr]);
                         resText += `</li>`;
                     };
-                };
-
             });
         resText += `</ul>`;
     };
