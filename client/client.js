@@ -75,6 +75,8 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `Array`
                         resText += `</li>`;
                         break;
+                    case (item.attr === "coordinates"):
+                        break;
                     default:
                         break;
                 }
