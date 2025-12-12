@@ -55,8 +55,8 @@ const submitGetEvery = async (form, method, options, url) => {
         return handleResponse(response, hasBody, resText);
     };
 
-    for (const country in resObj) {
-        resText += `<h3>${country["name"]}</h3>`;
+    for (const num in resObj["countries"]) {
+        resText += `<h3>${num}</h3>`;
         resText += `<ul>`
         checklistData.forEach((item) => {
             if (item.showAttr === true) {
