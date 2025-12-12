@@ -62,7 +62,9 @@ const submitGetEvery = async (form, method, options, url) => {
             if (item.showAttr === true && item.attr !== Array) {
                 resText+= `<li>${item.attr}: ${num[item.attr]}</li>`;
             } else if (item.showAttr === true && item.attr === Array) {
-
+                item.attr.forEach((prop) => {
+                    
+                })
             }
         })
         resText += `</ul>`;
