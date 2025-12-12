@@ -951,14 +951,14 @@
         "gmtOffset": -14400,
         "gmtOffsetName": "UTC-04:00",
         "abbreviation": "AMT",
-        "tzName": "Amazon Time (Brazil)[3"
+        "tzName": "Amazon Time (Brazil)[3]"
       },
       {
         "zoneName": "America/Campo_Grande",
         "gmtOffset": -14400,
         "gmtOffsetName": "UTC-04:00",
         "abbreviation": "AMT",
-        "tzName": "Amazon Time (Brazil)[3"
+        "tzName": "Amazon Time (Brazil)[3]"
       },
       {
         "zoneName": "America/Cuiaba",
@@ -1007,7 +1007,7 @@
         "gmtOffset": -14400,
         "gmtOffsetName": "UTC-04:00",
         "abbreviation": "AMT",
-        "tzName": "Amazon Time (Brazil)[3"
+        "tzName": "Amazon Time (Brazil)[3]"
       },
       {
         "zoneName": "America/Recife",
@@ -3192,7 +3192,7 @@
         "gmtOffset": 21600,
         "gmtOffsetName": "UTC+06:00",
         "abbreviation": "ALMT",
-        "tzName": "Alma-Ata Time[1"
+        "tzName": "Alma-Ata Time[1]"
       },
       {
         "zoneName": "Asia/Aqtau",
@@ -4708,7 +4708,7 @@
         "gmtOffset": 39600,
         "gmtOffsetName": "UTC+11:00",
         "abbreviation": "BST",
-        "tzName": "Bougainville Standard Time[6"
+        "tzName": "Bougainville Standard Time[6]"
       },
       {
         "zoneName": "Pacific/Port_Moresby",
@@ -4982,7 +4982,7 @@
         "gmtOffset": 43200,
         "gmtOffsetName": "UTC+12:00",
         "abbreviation": "ANAT",
-        "tzName": "Anadyr Time[4"
+        "tzName": "Anadyr Time[4]"
       },
       {
         "zoneName": "Asia/Barnaul",
