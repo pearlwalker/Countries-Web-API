@@ -72,7 +72,9 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (item.attr === "timezones"):
                         resText += `<li class="js_li">`;
-                        resText += ``;
+                        for (let zone of country.timezones) {
+
+                        };
                         resText += `</li>`;
                         break;
                     case (item.attr === "coordinates"):
