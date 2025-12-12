@@ -65,6 +65,7 @@ const submitGetEvery = async (form, method, options, url) => {
                 resText +=`<li>`
                 num[item.attr].forEach((prop) => {
                     resText += `${prop}`
+                    console.log(prop);
                 })
                 resText += `</li>`
             }
