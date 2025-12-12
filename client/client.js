@@ -61,20 +61,20 @@ const submitGetEvery = async (form, method, options, url) => {
         checklistData
             .filter((item) => item.showAttr === true)
             .forEach((item) => {
-                    if (item.showAttr === true && (country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
-                        console.log(country[item.attr]);
-                        resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
-                    } else if (item.showAttr === true && country[item.attr] instanceof Array) {
-                        resText += `<li>`;
-                        resText += `Array`
-                        console.log(country[item.attr]);
-                        resText += `</li>`;
-                    } else if (item.showAttr === true && country[item.attr] instanceof Object) {
-                        resText += `<li>`;
-                        resText += `Object`
-                        console.log(country[item.attr]);
-                        resText += `</li>`;
-                    };
+                if ((country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
+                    console.log(country[item.attr]);
+                    resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
+                } else if (country[item.attr] instanceof Array) {
+                    resText += `<li>`;
+                    resText += `Array`
+                    console.log(country[item.attr]);
+                    resText += `</li>`;
+                } else if (country[item.attr] instanceof Object) {
+                    resText += `<li>`;
+                    resText += `Object`
+                    console.log(country[item.attr]);
+                    resText += `</li>`;
+                };
             });
         resText += `</ul>`;
     };
