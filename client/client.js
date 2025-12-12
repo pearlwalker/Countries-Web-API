@@ -83,7 +83,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (item.attr === "timezones"):
                         resText += `
-                            <div class="js_wrapper wrapper_timezones">
+                            <div class="js_subwrapper">
                             <h4 class="js_h4">
                                 Timezones
                             </h4>
