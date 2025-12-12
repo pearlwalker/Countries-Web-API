@@ -55,15 +55,15 @@ const submitGetEvery = async (form, method, options, url) => {
         return handleResponse(response, hasBody, resText);
     };
     const countries = resObj["countries"];
-    for (const num of countries) {
-        resText += `<h3>${num.name}</h3>`;
+    for (const country of countries) {
+        resText += `<h3>${country.name}</h3>`;
         resText += `<ul>`
         checklistData.forEach((item) => {
             if (item.showAttr === true && (item.attr !== Array || item.attr !== Object)) {
-                resText += `<li>${item.attr}: ${num[item.attr]}</li>`;
+                resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
             } else if (item.showAttr === true && item.attr === Array) {
                 resText += `<li>`;
-                console.log(num[item.attr]);
+                console.log(country[item.attr]);
                 resText += `</li>`;
             };
         });
