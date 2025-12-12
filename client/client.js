@@ -59,7 +59,7 @@ const submitGetEvery = async (form, method, options, url) => {
         resText += `<h3>${country.name}</h3>`;
         resText += `<ul>`
         checklistData.forEach((item) => {
-            if (item.showAttr === true && (item.attr !== Array || item.attr !== Object)) {
+            if (item.showAttr === true && (item.attr !== Array && item.attr !== Object)) {
                 console.log(country[item.attr]);
                 resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
             } else if (item.showAttr === true && item.attr === Array) {
