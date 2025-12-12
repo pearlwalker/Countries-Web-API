@@ -62,6 +62,10 @@ const submitGetEvery = async (form, method, options, url) => {
             .filter((item) => item.showAttr === true)
             .forEach((item) => {
                 switch (typeof country[item.attr]) {
+                    case String:
+                        break;
+                    case Object:
+                        break;
                     default:
                         break;
                 };
