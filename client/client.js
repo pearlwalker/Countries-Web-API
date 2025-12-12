@@ -65,12 +65,12 @@ const submitGetEvery = async (form, method, options, url) => {
                     case (typeof country[item.attr] === "string"):
                         resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
                         break;
-                    case (country[item.attr] instanceof Object):
+                    case (item.attr === "finance"):
                         resText += `<li>${item.attr}: `;
                         resText += `Object`;
                         resText += `</li>`;
                         break;
-                    case (country[item.attr] instanceof Array):
+                    case (item.attr === "timezones"):
                         resText += `<li>${item.attr}: `;
                         resText += `Array`;
                         resText += `</li>`;
