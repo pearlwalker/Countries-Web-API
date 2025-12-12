@@ -63,6 +63,7 @@ const submitGetEvery = async (form, method, options, url) => {
             .forEach((item) => {
                 switch (true) {
                     case (typeof country[item.attr] === "string"):
+                        resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
                         break;
                     case (country[item.attr] instanceof Object):
                         break;
