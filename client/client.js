@@ -57,7 +57,9 @@ const submitGetEvery = async (form, method, options, url) => {
     const countries = resObj["countries"];
     for (const country of countries) {
         resText += `
-            <h3 class="js_h3">${country.name}</h3>
+            <h3 class="js_h3">
+                ${country.name}
+            </h3>
             <ul class="js_ul">
         `;
         checklistData
@@ -67,27 +69,29 @@ const submitGetEvery = async (form, method, options, url) => {
                     case (typeof country[item.attr] === "string"):
                         resText += `
                             <li class="js_li">
-                            ${(item.attr).charAt(0).toUpperCase()}${(item.attr).slice(1)}: ${country[item.attr]}
+                                ${(item.attr).charAt(0).toUpperCase()}${(item.attr).slice(1)}: ${country[item.attr]}
                             </li>
                         `;
                         break;
                     case (item.attr === "finance"):
                         resText += `
                             <li class="js_li">
-                            Currency: ${country.finance["currency_name"]}/${country.finance.currency} (${country.finance["currency_symbol"]})
+                                Currency: ${country.finance["currency_name"]}/${country.finance.currency} (${country.finance["currency_symbol"]})
                             </li>
                         `;
                         break;
                     case (item.attr === "timezones"):
                         resText += `
                             <div class="js_wrapper countries">
-                            <h4 class="js_h4">Timezones</h4>
+                            <h4 class="js_h4">
+                                Timezones
+                            </h4>
                             <ul class="js_nestedList js_ul">
                         `;
                         for (let zone of country.timezones) {
                             resText += `
                                 <li>
-                                ${zone.tzName}/${zone.abbreviation} (${zone.gmtOffsetName})
+                                    ${zone.tzName}/${zone.abbreviation} (${zone.gmtOffsetName})
                                 </li>
                             `;
                         };
@@ -99,7 +103,7 @@ const submitGetEvery = async (form, method, options, url) => {
                     case (item.attr === "coordinates"):
                         resText += `
                             <li class="js_li">
-                            ${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0
+                                ${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0
                             </li>
                         `;
                         break;
