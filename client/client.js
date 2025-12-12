@@ -67,12 +67,12 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (country[item.attr] instanceof Object):
                         resText += `<li>${item.attr}: `;
-                        resText += `Object`
+                        resText += `Object`;
                         resText += `</li>`;
                         break;
                     case (country[item.attr] instanceof Array):
                         resText += `<li>${item.attr}: `;
-                        resText += `Array`
+                        resText += `Array`;
                         resText += `</li>`;
                         break;
                     case (item.attr === "coordinates"):
@@ -80,7 +80,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     default:
                         break;
-                }
+                };
             });
         resText += `</ul>`;
     };
