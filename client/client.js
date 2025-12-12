@@ -63,20 +63,20 @@ const submitGetEvery = async (form, method, options, url) => {
             .forEach((item) => {
                 switch (true) {
                     case (typeof country[item.attr] === "string"):
-                        resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
+                        resText += `<li class="js_li">${item.attr}: ${country[item.attr]}</li>`;
                         break;
                     case (item.attr === "finance"):
-                        resText += `<li>${item.attr}: `;
+                        resText += `<li class="js_li">${item.attr}: `;
                         resText += `Object`;
                         resText += `</li>`;
                         break;
                     case (item.attr === "timezones"):
-                        resText += `<li>${item.attr}: `;
+                        resText += `<li class="js_li">${item.attr}: `;
                         resText += `Array`;
                         resText += `</li>`;
                         break;
                     case (item.attr === "coordinates"):
-                        resText += `<li>${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0</li>`;
+                        resText += `<li class="js_li">${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0</li>`;
                         break;
                     default:
                         break;
