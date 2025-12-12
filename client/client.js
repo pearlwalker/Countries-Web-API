@@ -71,8 +71,10 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `</li>`;
                         break;
                     case (item.attr === "timezones"):
-                        resText += `<h4 class="js_h4">Timezones</h4>`;
-                        resText += `<ul class="js_nestedList js_ul">`;
+                        resText += `
+                            <h4 class="js_h4">Timezones</h4>
+                            <ul class="js_nestedList js_ul">
+                        `;
                         for (let zone of country.timezones) {
                             resText += `<li>`;
                             resText += `${zone.tzName}/${zone.abbreviation} (${zone.gmtOffsetName})`;
