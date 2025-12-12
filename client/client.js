@@ -73,7 +73,9 @@ const submitGetEvery = async (form, method, options, url) => {
                     case (item.attr === "timezones"):
                         resText += `<ul class="js_nestedList js_ul">`;
                         for (let zone of country.timezones) {
-
+                            resText += `<li>`;
+                            resText += ``;
+                            resText += `</li>`;
                         };
                         resText += `</ul>`;
                         break;
