@@ -59,7 +59,7 @@ const submitGetEvery = async (form, method, options, url) => {
         resText += `
             <h3 class="js_h3">${country.name}</h3>
             <ul class="js_ul">
-            `;
+        `;
         checklistData
             .filter((item) => item.showAttr === true)
             .forEach((item) => {
@@ -68,9 +68,11 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `<li class="js_li">${(item.attr).charAt(0).toUpperCase()}${(item.attr).slice(1)}: ${country[item.attr]}</li>`;
                         break;
                     case (item.attr === "finance"):
-                        resText += `<li class="js_li">`;
-                        resText += `Currency: ${country.finance["currency_name"]}/${country.finance.currency} (${country.finance["currency_symbol"]})`;
-                        resText += `</li>`;
+                        resText += `
+                            <li class="js_li">
+                            Currency: ${country.finance["currency_name"]}/${country.finance.currency} (${country.finance["currency_symbol"]})
+                            </li>
+                        `;
                         break;
                     case (item.attr === "timezones"):
                         resText += `
