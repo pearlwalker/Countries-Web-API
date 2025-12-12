@@ -66,7 +66,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `<li class="js_li">${item.attr}: ${country[item.attr]}</li>`;
                         break;
                     case (item.attr === "finance"):
-                        resText += `<li class="js_li">${item.attr}: `;
+                        resText += `<li class="js_li">`;
                         resText += ``;
                         resText += `</li>`;
                         break;
