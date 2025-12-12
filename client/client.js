@@ -66,8 +66,14 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
                         break;
                     case (country[item.attr] instanceof Object):
+                        resText += `<li>${item.attr}: `;
+                        resText += `Object`
+                        resText += `</li>`;
                         break;
                     case (country[item.attr] instanceof Array):
+                        resText += `<li>${item.attr}: `;
+                        resText += `Array`
+                        resText += `</li>`;
                         break;
                     default:
                         break;
