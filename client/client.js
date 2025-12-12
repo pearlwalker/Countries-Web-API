@@ -57,6 +57,7 @@ const submitGetEvery = async (form, method, options, url) => {
     const countries = resObj["countries"];
     for (const country of countries) {
         resText += `
+            <div class = "js_wrapper wrapper_countries">
             <h3 class="js_h3">
                 ${country.name}
             </h3>
@@ -111,7 +112,10 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                 };
             });
-        resText += `</ul>`;
+        resText += `
+            </ul>
+            </div>
+        `;
     };
     return handleResponse(response, hasBody, resText);
 };
