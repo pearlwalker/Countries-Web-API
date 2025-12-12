@@ -76,6 +76,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `</li>`;
                         break;
                     case (item.attr === "coordinates"):
+                        resText += `<li>${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0</li>`;
                         break;
                     default:
                         break;
