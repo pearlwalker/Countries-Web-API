@@ -69,6 +69,8 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (country[item.attr] instanceof Array):
                         break;
+                    default:
+                        break;
                 }
                 // if ((country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
                 //     console.log(country[item.attr]);
