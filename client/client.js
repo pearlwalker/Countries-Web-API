@@ -67,7 +67,7 @@ const submitGetEvery = async (form, method, options, url) => {
                         break;
                     case (item.attr === "finance"):
                         resText += `<li class="js_li">${item.attr}: `;
-                        resText += `Object`;
+                        resText += ``;
                         resText += `</li>`;
                         break;
                     case (item.attr === "timezones"):
