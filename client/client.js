@@ -60,7 +60,7 @@ const submitGetEvery = async (form, method, options, url) => {
         resText += `<ul>`
         checklistData.forEach((item) => {
             if (item.showAttr === true) {
-                resText+= `<li>${item.attr}: ${num.property}</li>`;
+                resText+= `<li>${item.attr}: ${num[item.attr]}</li>`;
             }
         })
         resText += `</ul>`;
