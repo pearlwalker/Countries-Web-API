@@ -68,7 +68,10 @@ const submitGetEvery = async (form, method, options, url) => {
                 console.log(country[item.attr]);
                 resText += `</li>`;
             } else if (item.showAttr === true && country[item.attr] instanceof Object) {
-
+                resText += `<li>`;
+                resText += `Object`
+                console.log(country[item.attr]);
+                resText += `</li>`;
             };
         });
         resText += `</ul>`;
