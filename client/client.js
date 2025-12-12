@@ -60,16 +60,16 @@ const submitGetEvery = async (form, method, options, url) => {
         resText += `<ul>`
         checklistData.forEach((item) => {
             if (item.showAttr === true && item.attr !== Array) {
-                resText+= `<li>${item.attr}: ${num[item.attr]}</li>`;
+                resText += `<li>${item.attr}: ${num[item.attr]}</li>`;
             } else if (item.showAttr === true && item.attr === Array) {
-                resText +=`<li>`
+                resText += `<li>`;
                 num[item.attr].forEach((prop) => {
-                    resText += `${prop}`
+                    resText += `${prop}`;
                     console.log(prop);
-                })
-                resText += `</li>`
-            }
-        })
+                });
+                resText += `</li>`;
+            };
+        });
         resText += `</ul>`;
     };
     return handleResponse(response, hasBody, resText);
