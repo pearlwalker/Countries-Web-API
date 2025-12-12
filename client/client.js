@@ -62,7 +62,7 @@ const submitGetEvery = async (form, method, options, url) => {
             if (item.showAttr === true && (country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
                 console.log(country[item.attr]);
                 resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
-            } else if (item.showAttr === true && item.attr === Array) {
+            } else if (item.showAttr === true && country[item.attr] instanceof Array) {
                 resText += `<li>`;
                 console.log(country[item.attr]);
                 resText += `</li>`;
