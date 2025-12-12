@@ -58,25 +58,27 @@ const submitGetEvery = async (form, method, options, url) => {
     for (const country of countries) {
         resText += `<h3>${country.name}</h3>`;
         resText += `<ul>`
-        checklistData.forEach((item) => {
-            if (item.showAttr === true) {
-                if (item.showAttr === true && (country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
-                    console.log(country[item.attr]);
-                    resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
-                } else if (item.showAttr === true && country[item.attr] instanceof Array) {
-                    resText += `<li>`;
-                    resText += `Array`
-                    console.log(country[item.attr]);
-                    resText += `</li>`;
-                } else if (item.showAttr === true && country[item.attr] instanceof Object) {
-                    resText += `<li>`;
-                    resText += `Object`
-                    console.log(country[item.attr]);
-                    resText += `</li>`;
+        checklistData
+            .filter((item) => item.showAttr === true)
+            .forEach((item) => {
+                if (item.showAttr === true) {
+                    if (item.showAttr === true && (country[item.attr] instanceof Array || country[item.attr] instanceof Object) !== true) {
+                        console.log(country[item.attr]);
+                        resText += `<li>${item.attr}: ${country[item.attr]}</li>`;
+                    } else if (item.showAttr === true && country[item.attr] instanceof Array) {
+                        resText += `<li>`;
+                        resText += `Array`
+                        console.log(country[item.attr]);
+                        resText += `</li>`;
+                    } else if (item.showAttr === true && country[item.attr] instanceof Object) {
+                        resText += `<li>`;
+                        resText += `Object`
+                        console.log(country[item.attr]);
+                        resText += `</li>`;
+                    };
                 };
-            };
 
-        });
+            });
         resText += `</ul>`;
     };
     return handleResponse(response, hasBody, resText);
