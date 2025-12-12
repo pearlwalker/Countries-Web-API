@@ -71,11 +71,11 @@ const submitGetEvery = async (form, method, options, url) => {
                         resText += `</li>`;
                         break;
                     case (item.attr === "timezones"):
-                        resText += `<li class="js_li">`;
+                        resText += `<ul class="js_nestedList js_ul">`;
                         for (let zone of country.timezones) {
 
                         };
-                        resText += `</li>`;
+                        resText += `</ul>`;
                         break;
                     case (item.attr === "coordinates"):
                         resText += `<li class="js_li">${item.attr}: ${country.latitude}\u00B0, ${country.longitude}\u00B0</li>`;
