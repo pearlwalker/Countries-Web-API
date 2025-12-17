@@ -169,7 +169,6 @@ const createCollapsibles = () => {
     const requestForm = document.querySelectorAll('.requestForm');
     collapsibles.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log(`Clicked ${button} at ${index}`)
             const content = requestForm[index];
             console.log(`${content}`);
             requestForm.forEach((form) => {
