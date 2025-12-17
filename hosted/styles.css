@@ -12,7 +12,8 @@ body {
 }
 
 #attrChecklist {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 #top {
