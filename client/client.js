@@ -26,6 +26,10 @@ const handleResponse = async (res, hasBody, resText) => {
         content.innerHTML += resText;
     };
 };
+
+const submitGetEveryWIP = async (form, method, options, url) => {
+
+};
 const submitGetEvery = async (form, method, options, url) => {
     const response = await fetch(url, options);
 
