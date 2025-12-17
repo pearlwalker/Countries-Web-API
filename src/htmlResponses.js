@@ -18,6 +18,10 @@ const getIndex = (req, res) => {
   serveFile(res, index, 'text/html');
 };
 
+const getDocumentation = (req, res) => {
+
+};
+
 const getCSS = (req, res) => {
   serveFile(res, css, 'text/css');
 };
@@ -28,6 +32,7 @@ const getBundle = (req, res) => {
 
 module.exports = {
   getIndex,
+  getDocumentation,
   getCSS,
   getBundle,
 };
