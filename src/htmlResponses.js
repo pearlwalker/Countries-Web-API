@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const index = fs.readFileSync(`${__dirname}/../hosted/client.html`);
+const documentation = fs.readFileSync(`${__dirname}/../hosted/documentation.html`);
 const css = fs.readFileSync(`${__dirname}/../hosted/styles.css`);
 const bundle = fs.readFileSync(`${__dirname}/../hosted/bundle.js`);
 
