@@ -19,7 +19,7 @@ const getIndex = (req, res) => {
 };
 
 const getDocumentation = (req, res) => {
-
+  serveFile(res, documentation, 'text/html');
 };
 
 const getCSS = (req, res) => {
