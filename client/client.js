@@ -193,49 +193,52 @@ const init = () => {
     const getSunForm = document.querySelector('#getSun');
     const renameForm = document.querySelector('#renameTZ');
     const createForm = document.querySelector('#createTZ');
-    const formData = [
-        {
-            form: getEveryForm,
-            handler: submitGetEvery,
-        },
-        {
-            form: getCountryForm,
-            handler: submitGetCountry,
-        },
-        {
-            form: getTimezonesForm,
-            handler: submitGetTimezones,
-        },
-        {
-            form: getSunForm,
-            handler: submitGetSun,
-        },
-        {
-            form: renameForm,
-            handler: submitRenameTZ,
-        },
-        {
-            form: createForm,
-            handler: submitCreateTZ,
-        },
-    ];
 
-    formData.forEach((item) => {
-        const submitCallback = (e) => {
-            const formMethod = item.form.querySelector('.methodSelect')?.value ?? item.form.getAttribute('method') ?? null;
-            const options = {
-                method: formMethod,
-                headers: {
-                    'Accept': 'application/json',
-                },
+    if (getEveryForm && getCountryForm && getTimezonesForm && getSunForm && renameForm && createForm) {
+        const formData = [
+            {
+                form: getEveryForm,
+                handler: submitGetEvery,
+            },
+            {
+                form: getCountryForm,
+                handler: submitGetCountry,
+            },
+            {
+                form: getTimezonesForm,
+                handler: submitGetTimezones,
+            },
+            {
+                form: getSunForm,
+                handler: submitGetSun,
+            },
+            {
+                form: renameForm,
+                handler: submitRenameTZ,
+            },
+            {
+                form: createForm,
+                handler: submitCreateTZ,
+            },
+        ];
+
+        formData.forEach((item) => {
+            const submitCallback = (e) => {
+                const formMethod = item.form.querySelector('.methodSelect')?.value ?? item.form.getAttribute('method') ?? null;
+                const options = {
+                    method: formMethod,
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                };
+                const url = item.form.getAttribute('action');
+                e.preventDefault();
+                item.handler(item.form, formMethod, options, url);
+                return false;
             };
-            const url = item.form.getAttribute('action');
-            e.preventDefault();
-            item.handler(item.form, formMethod, options, url);
-            return false;
-        };
-        item.form.addEventListener('submit', submitCallback);
-    });
+            item.form.addEventListener('submit', submitCallback);
+        });
+    }
 };
 
 window.onload = init;
