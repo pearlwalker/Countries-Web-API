@@ -32,20 +32,34 @@
             <form action="/api/getFromEveryCountry" method="get" class="requestForm" id="getEvery">
                 <p class="formDescription">Returns selected attributes from every country in countries.json</p>
                 <fieldset id="attrChecklist" class="checklist">
-                    <label for="capital">Capital:</label>
-                    <input type="checkbox" name="capital" id="capital">
-                    <label for="finance">Finance:</label>
-                    <input type="checkbox" name="finance" id="finance">
-                    <label for="region">Region:</label>
-                    <input type="checkbox" name="region" id="region">
-                    <label for="subregion">Subregion:</label>
-                    <input type="checkbox" name="subregion" id="subregion">
-                    <label for="nationality">Nationality:</label>
-                    <input type="checkbox" name="nationality" id="nationality">
-                    <label for="timezones">Timezones:</label>
-                    <input type="checkbox" name="timezones" id="timezones">
-                    <label for="coordinates">Coordinates:</label>
-                    <input type="checkbox" name="coordinates" id="coordinates">
+                    <span>
+                        <label for="capital">Capital:</label>
+                        <input type="checkbox" name="capital" id="capital">
+                    </span>
+                    <span>
+                        <label for="finance">Finance:</label>
+                        <input type="checkbox" name="finance" id="finance">
+                    </span>
+                    <span>
+                        <label for="region">Region:</label>
+                        <input type="checkbox" name="region" id="region">
+                    </span>
+                    <span>
+                        <label for="subregion">Subregion:</label>
+                        <input type="checkbox" name="subregion" id="subregion">
+                    </span>
+                    <span>
+                        <label for="nationality">Nationality:</label>
+                        <input type="checkbox" name="nationality" id="nationality">    
+                    </span>
+                    <span>
+                        <label for="timezones">Timezones:</label>
+                        <input type="checkbox" name="timezones" id="timezones">    
+                    </span>
+                    <span>
+                        <label for="coordinates">Coordinates:</label>
+                        <input type="checkbox" name="coordinates" id="coordinates">
+                    </span>
                 </fieldset>
                 <select class="methodSelect" id="method-getEvery">
                     <option value="get">GET</option>
